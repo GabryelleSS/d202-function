@@ -7,14 +7,15 @@
 // 6 - Ele tem 10 vidas; #
 
 let numeroPensado = Math.floor(Math.random() * 50 + 1);
-let vidas = 1;
+let vidas = 10;
 
 const geradorDeNumeroAleatorio = function(){
+    console.log(numeroPensado);
+    let adivinharNumero;
+    
+    while(vidas >= 0 && numeroPensado != adivinharNumero){
+        adivinharNumero = prompt('Qual é o número pensado?');                
 
-    
-    let adivinharNumero = prompt('Qual é o número pensado?');
-    
-    while(vidas >= 0){
         if(numeroPensado == adivinharNumero){
             alert(`Parabéns! Você acertou, o número pensado é: ${numeroPensado}`);
         }
@@ -27,10 +28,8 @@ const geradorDeNumeroAleatorio = function(){
                 else{
                     alert(`O número pensado é menor. Agora você tem ${vidas} vidas.`);
                 }
-    
         }
-        vidas--
     }
-
-    return numeroPensado;
 }
+
+geradorDeNumeroAleatorio();
