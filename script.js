@@ -6,37 +6,31 @@
 // 5 - Se o usuário errar, perde uma vida; #
 // 6 - Ele tem 10 vidas; #
 
-let adivinharNumero = prompt('Qual é o número pensado?');
-let vidas = 10;
-
-// totalDeVidas = vidas - 1;
-
+let numeroPensado = Math.floor(Math.random() * 50 + 1);
+let vidas = 1;
 
 const geradorDeNumeroAleatorio = function(){
-    let numeroPensado = Math.floor(Math.random() * 5 + 1);
 
-    if(numeroPensado == adivinharNumero){
-        alert(`Parabéns! Você acertou, o número pensado é: ${numeroPensado}`);
-    }
-    else{
-        alert(`Você errou!`);
-        vidas--;
-            if(numeroPensado > adivinharNumero){
-                alert(`O número pensado é maior.' Agora você tem ${vidas} vidas.`)
-            }
-            else{
-                alert(`O número pensado é menor. Agora você tem ${vidas} vidas.`);
-            }
-
+    
+    let adivinharNumero = prompt('Qual é o número pensado?');
+    
+    while(vidas >= 0){
+        if(numeroPensado == adivinharNumero){
+            alert(`Parabéns! Você acertou, o número pensado é: ${numeroPensado}`);
+        }
+        else{
+            alert(`Você errou!`);
+            vidas--;
+                if(numeroPensado > adivinharNumero){
+                    alert(`O número pensado é maior. Agora você tem ${vidas} vidas.`)
+                }
+                else{
+                    alert(`O número pensado é menor. Agora você tem ${vidas} vidas.`);
+                }
+    
+        }
+        vidas--
     }
 
     return numeroPensado;
 }
-
-// for(vidas = 10; vidas >= 0; vidas--){
-//     alert(`Agora você tem ${vidas} vidas. Tente novamente!`);
-// }
-
-
-
-
