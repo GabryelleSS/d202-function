@@ -7,7 +7,7 @@
 // 6 - Ele tem 10 vidas; #
 
 let adivinharNumero = prompt('Qual é o número pensado?');
-// let vidas = 1;
+let vidas = 10;
 
 // totalDeVidas = vidas - 1;
 
@@ -20,16 +20,22 @@ const geradorDeNumeroAleatorio = function(){
     }
     else{
         alert(`Você errou!`);
+        vidas--;
             if(numeroPensado > adivinharNumero){
-                alert('O número pensado é maior.')
+                alert(`O número pensado é maior.' Agora você tem ${vidas} vidas.`)
             }
             else{
-                alert('O número pensado é menor.')
+                alert(`O número pensado é menor. Agora você tem ${vidas} vidas.`);
             }
+
     }
 
     return numeroPensado;
 }
+
+// for(vidas = 10; vidas >= 0; vidas--){
+//     alert(`Agora você tem ${vidas} vidas. Tente novamente!`);
+// }
 
 
 
